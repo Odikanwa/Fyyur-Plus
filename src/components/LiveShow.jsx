@@ -8,6 +8,8 @@ const Container = styled.div`
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 `;
 
 const Wrapper = styled.div`
@@ -25,7 +27,7 @@ const AvatarDescWrapper = styled.div`
 `;
 
 const Avatar = styled.div`
-  background-color: black;
+  /* background-color: black; */
   color: white;
   padding: 10px;
   margin-left: 20px;
@@ -34,6 +36,7 @@ const Avatar = styled.div`
   align-self: center;
   justify-items: center;
   justify-content: center;
+  border: 2px solid black;
 `;
 
 const Desc = styled.div`
@@ -64,7 +67,7 @@ const Kebab = styled.div`
 
 const Video = styled.div`
     background-color: black;
-    height: 230px;
+    /* height: 230px; */
     margin: 7px 0px 10px 0px;
 `;
 
@@ -74,19 +77,21 @@ const LiveShow = () => {
       <Wrapper>
         <AvatarDescWrapper>
             <Avatar>
-                <BsFillPersonFill style={{ height: "30px", width: "30px"}}/>
+                <BsFillPersonFill style={{ height: "30px", width: "30px", color: "orange"}}/>
             </Avatar>
             <Desc>
-                <Title>Wild, Wild Night</Title>
-                <Text>Olameda et Phyna</Text>
-                <Text>Eko Hall</Text>
+                <Title>For My Hand</Title>
+                <Text>Burna Boy feat. Ed Sheeran</Text>
+                <Text>Wembley Arena, London</Text>
             </Desc>
         </AvatarDescWrapper>
         <Kebab>
           <MdMoreVert style={{ height: "20px", width: "20px"}}/>
         </Kebab>
       </Wrapper>
-        <Video/>
+        <Video>
+        <iframe width="390" height="220" src="https://www.youtube-nocookie.com/embed/9J4WImLne1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </Video>
     </Container>
   )
 }

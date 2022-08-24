@@ -5,6 +5,8 @@ import TrendingCarousel from "../../components/TrendingCarousel";
 import TodayShowCarousel from "../../components/TodayShowCarousel";
 import LiveShow from "../../components/LiveShow";
 import ShowCard from "../../components/ShowCard";
+import { MdRadioButtonChecked } from "react-icons/md";
+
 
 const Container = styled.div`
   display: flex;
@@ -43,10 +45,23 @@ const TrendingCard = styled.div`
   border-radius: 20px;
 `;
 
+const TitleDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 const Title = styled.h4`
   font-weight: 600;
-  margin: 10px 20px 0px 20px;
+  margin: 10px 5px 0px 20px;
 `;
+
+const LiveIcon = styled.div`
+  align-self: center;
+  margin-top: 12px;
+  margin-left: 0px;
+  text-align: left;
+  color: #ff0800;
+`
 
 const EmptyDiv = styled.div`
   height: 150px;
@@ -66,9 +81,14 @@ const Home = () => {
         <TrendingCard> 
             <TrendingCarousel/>
         </TrendingCard>
+        <TitleDiv>
         <Title>
-          Live Show
+          Live Show 
         </Title>
+        <LiveIcon>
+          <MdRadioButtonChecked style={{ height: "15px", width: "15px"}}/>
+        </LiveIcon>
+        </TitleDiv>
         <LiveShow/>
         <Title>
           Today's Shows

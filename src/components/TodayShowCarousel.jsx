@@ -9,7 +9,7 @@ import styled from "styled-components";
 const Card = styled.div`
   position: relative;
   height: 300px;
-  margin: 7px 20px 10px 20px;
+  margin: 15px 20px 10px 20px;
 `;
 
 const Img = styled.img`
@@ -25,7 +25,7 @@ const Overlay = styled.div`
   top: 157px;
   bottom: 0px; 
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  background: rgba(0, 0, 0, 0.6); /* Black see-through */
   color: #f1f1f1; 
   height: 130px;
   width: 87%;
