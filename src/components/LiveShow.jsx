@@ -67,7 +67,8 @@ const Kebab = styled.div`
 
 const Video = styled.div`
     background-color: black;
-    /* height: 230px; */
+    height: 220px;
+    width: 100%;
     margin: 7px 0px 10px 0px;
 `;
 
@@ -90,7 +91,7 @@ const LiveShow = () => {
         </Kebab>
       </Wrapper>
         <Video>
-        <iframe width="390" height="220" src="https://www.youtube-nocookie.com/embed/9J4WImLne1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="220" src="https://www.youtube-nocookie.com/embed/9J4WImLne1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </Video>
     </Container>
   )

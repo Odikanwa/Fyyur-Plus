@@ -132,8 +132,6 @@ const BookNowBtn = styled.button`
   margin-left: 30%;
   padding: 8px 6px;
   justify-content: center;
-  /* color: #ff0800;
-  background-color: white; */
   color: white;
   background-color: #ff0800;
   border: none;
@@ -145,7 +143,6 @@ const BtnText = styled.h4`
   margin-left: 0px;
   font-weight: 500;
   text-align: center;
-  /* color: #ff0800; */
   background-color: #ff0800;
   color: white;
 `;
@@ -156,7 +153,6 @@ const BtnIcon = styled.div`
   margin-left: 0;
   align-self: left;
   font-weight: 500;
-  /* color: #ff0800; */
   background-color: #ff0800;
   color: white;
 `;

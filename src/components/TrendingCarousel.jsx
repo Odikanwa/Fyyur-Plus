@@ -9,6 +9,7 @@ const Card = styled.div`
   flex-direction: row;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
+  background-color: #0B0510;
 `;
 
 const Img = styled.img`

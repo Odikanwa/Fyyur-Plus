@@ -15,12 +15,12 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   top: 0;
-  height: 8vh;
+  height: 7vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
   font-family: 'Roboto', sans-serif;
-  background-color: black;
+  background-color: #0B0510;
   color: white;
   align-items: center;
   justify-content: space-between;
@@ -51,6 +51,7 @@ const Logo = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 0px;
+  align-items: center;
   align-self: center;
 `;
 
@@ -58,6 +59,9 @@ const Img = styled.img`
   height: 30px;
   width: 30px;
   margin-right: 3px;
+  align-self: center;
+  text-align: center;
+  vertical-align: center;
 `;
 
 const LogoText = styled.h3`
@@ -73,7 +77,7 @@ const Avatar  = styled.div`
   background-color: white;
   color: black;
   margin-right: 20px;
-  padding: 7px;
+  padding: 6px;
   border-radius: 50%;
   align-self: center;
 `;

@@ -6,12 +6,12 @@ import { BsHouse, BsSearch, BsBell, BsEnvelope } from "react-icons/bs";
 const Container = styled.div`
   position: fixed;
   bottom: 0;
-  height: 8vh;
+  height: 7vh;
   width: 100vw;
   display: flex;
   flex-direction: row;
   font-family: 'Roboto', sans-serif;
-  background-color: black;
+  background-color: #0B0510;
   color: white;
   align-items: center;
   justify-content: space-around;

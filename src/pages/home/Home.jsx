@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 `;
 
 const TrendingHeader = styled.div`
-  background-color: black;
+  background-color: #0B0510;
   height: 40px;
   border-top: 1px solid gray;
 `;
