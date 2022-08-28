@@ -73,11 +73,9 @@ const Home = () => {
     <Container>
       <Header/>
       <Wrapper>
-      <TrendingHeader>
-            <TrendingHeaderText>
+            <Title>
               Trending ...
-            </TrendingHeaderText>
-          </TrendingHeader>
+            </Title>
         <TrendingCard> 
             <TrendingCarousel/>
         </TrendingCard>

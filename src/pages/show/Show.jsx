@@ -13,20 +13,28 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  
+`;
+
+const Wrapper = styled.div`
+  height: auto;
+  width: 100%;
   background-color: #0B0510;
 `;
 
 const Card = styled.div`
   position: relative;
-  height: 350px;
+  height: 380px;
   margin: 0px;
 `;
 
 const Img = styled.img`
   width: 100%;
-  height: 350px;
+  height: 380px;
   align-self: center;
   color: black;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 `;
 const Overlay = styled.div`
   position: absolute; 
@@ -34,7 +42,7 @@ const Overlay = styled.div`
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
-  height: 350px;
+  height: 380px;
   width: 100%;
   opacity:1;
   color: white;
@@ -57,11 +65,11 @@ const Heart = styled.div`
   align-self: center;
   align-items: center;
   padding: 3px;
-  margin-right: 7%;
+  margin-right: 20px;
 `;
 
 const Details = styled.div`
-  margin-top: 180px;
+  margin-top: 220px;
   height: 200px;
   width: 100%;
   display: flex;
@@ -159,8 +167,12 @@ const AboutExtrasDiv = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  margin-top: 15px;
-  margin-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 15px;
+  padding-left: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 `;
 
 const AboutBtn = styled.button`
@@ -192,13 +204,20 @@ const TextBlock = styled.p`
    color: white;
 `;
 
-const Price = styled.h3`
+const PriceDiv = styled.h3`
   margin-top: 0px;
   padding: 20px;
   color: white;
   background-color: purple;
+  border-style: dashed;
   /* background-color: #000000; */
 `;
+
+const Price = styled.span`
+  font-size: 22px;
+  font-weight: bold;
+`;
+
 
 const TicketDiv = styled.div`
   height: 50px;
@@ -209,6 +228,7 @@ const TicketDiv = styled.div`
   margin-top: 0px;
   margin-left: 20px;
 `;
+
 
 const BuyTicketBtn = styled.button`
   height: 43px;
@@ -230,7 +250,8 @@ const GiftTicketBtn = styled.button`
 `;
 
 const Location = styled.h3`
-  margin-top: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 20px;
   color: white;
   /* background-color: #000000; */
@@ -255,6 +276,7 @@ const Show = () => {
     }
   return (
     <Container>
+      <Wrapper>
       <Header/>
         <Card>
           <Img src={images.trending1}/>
@@ -305,7 +327,9 @@ const Show = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
           deserunt mollit anim id est laborum.
         </TextBlock>
-        <Price> Ticket Price: 1500 NGN</Price>
+        <PriceDiv> 
+          Ticket Price: <Price> 1500 NGN </Price>
+        </PriceDiv>
         <TicketDiv>
           <BuyTicketBtn> Buy Ticket </BuyTicketBtn>
           <GiftTicketBtn> Gift Ticket </GiftTicketBtn>
@@ -316,6 +340,7 @@ const Show = () => {
         </MapDiv>
         <EmptyDiv/>
       <Footer/>
+      </Wrapper>
     </Container>
   )
 }

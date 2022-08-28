@@ -62,7 +62,7 @@ const Text = styled.p`
 
 const Kebab = styled.div`
   margin-top: 3%;
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 const Video = styled.div`
