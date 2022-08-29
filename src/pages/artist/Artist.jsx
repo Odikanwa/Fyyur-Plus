@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { MdFavorite, MdOutlineAccessTime, MdLocationPin, MdSettingsVoice } from "react-icons/md";
+import { BsToggleOn } from "react-icons/bs";
+import { MdFavorite, MdLink, MdLocationPin, MdPhone } from "react-icons/md";
 
 // ******* CSS Styles *******
 
@@ -19,7 +20,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   height: auto;
   width: 100%;
-  background-color: #0B0510;
+  /* background-color: #0B0510; */
 `;
 
 const Card = styled.div`
@@ -77,6 +78,67 @@ const ArtistName = styled.h1`
   font-family: 'Silkscreen', cursive;
 `;
 
+const GenresDiv = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap: 15px;
+`; 
+
+const Genre = styled.p`
+  color: black;
+  background-color: #C5C6D0;
+  padding: 5px 10px;
+  border-radius: 5px;
+`;
+
+const AboutDiv = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0px;
+`;
+
+const IconTextDiv = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-right: 20px;
+`;
+
+const Icon = styled.div`
+  width: 10%;
+  margin: 0px;
+`;
+
+const Text = styled.p`
+width: 80%;
+margin: 0px;
+`;
+
+const TitleDiv = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+`;
+
+const Title = styled.h4`
+  margin-top: 0px;
+  margin-right: 10px;
+  font-weight: 600;
+  text-align: center;
+`;
 
 
 const Artist = () => {
@@ -96,6 +158,37 @@ const Artist = () => {
             <ArtistName> PHYNO </ArtistName>
           </Overlay>
         </Card>
+        <GenresDiv>
+          <Genre> RAP </Genre>
+          <Genre> HIGHLIFE </Genre>
+          <Genre> AFRO-BEAT </Genre>
+        </GenresDiv>
+        <AboutDiv>
+          <IconTextDiv>
+            <Icon>
+              <MdLocationPin style={{ height: "22px", width: "22px", color: "brown"}}/>
+            </Icon>
+            <Text> Enugu, Nigeria </Text>
+          </IconTextDiv>
+          <IconTextDiv>
+            <Icon>
+              <MdPhone style={{ height: "22px", width: "22px", color: "brown"}}/>
+            </Icon>
+            <Text> +234 810 777 2340 </Text>
+          </IconTextDiv>
+          <IconTextDiv>
+            <Icon>
+              <MdLink style={{ height: "22px", width: "22px", color: "brown"}}/>
+            </Icon>
+            <Text> https://www.phynoezege.com </Text>
+          </IconTextDiv>
+        </AboutDiv>
+        <TitleDiv>
+            <Title> Seeking Venue </Title>
+            <Icon>
+              <BsToggleOn style={{ height: "22px", width: "22px", color: "green", textAlign: "left"}}/>
+            </Icon>
+          </TitleDiv>
       <Footer/>
       </Wrapper>
     </Container>

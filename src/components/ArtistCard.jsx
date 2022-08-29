@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import { BsFillPersonFill } from "react-icons/bs";
 import { MdFavorite } from "react-icons/md";
 
 const Container = styled.div`
