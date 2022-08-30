@@ -24,13 +24,13 @@ const Wrapper = styled.div`
 
 const Card = styled.div`
   position: relative;
-  height: 380px;
+  height: 400px;
   margin: 0px;
 `;
 
 const Img = styled.img`
   width: 100%;
-  height: 380px;
+  height: 400px;
   align-self: center;
   color: black;
   border-bottom-left-radius: 40px;
@@ -42,7 +42,7 @@ const Overlay = styled.div`
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
-  height: 380px;
+  height: 400px;
   width: 100%;
   opacity:1;
   color: white;
@@ -69,7 +69,7 @@ const Heart = styled.div`
 `;
 
 const Details = styled.div`
-  margin-top: 220px;
+  margin-top: 240px;
   height: 200px;
   width: 100%;
   display: flex;

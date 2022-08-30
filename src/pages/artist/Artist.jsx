@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import ShowCard from "../../components/ShowCard";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { BsToggleOn } from "react-icons/bs";
+import { BsToggleOn, BsGeoFill } from "react-icons/bs";
 import { MdFavorite, MdLink, MdLocationPin, MdPhone } from "react-icons/md";
 
 // ******* CSS Styles *******
@@ -89,8 +90,9 @@ const GenresDiv = styled.div`
 `; 
 
 const Genre = styled.p`
-  color: black;
-  background-color: #C5C6D0;
+  color: white;
+  /* background-color: #C5C6D0; */
+  background-color: purple;
   padding: 5px 10px;
   border-radius: 5px;
 `;
@@ -119,7 +121,7 @@ const Icon = styled.div`
 `;
 
 const Text = styled.p`
-width: 80%;
+width: 90%;
 margin: 0px;
 `;
 
@@ -128,7 +130,7 @@ const TitleDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 20px;
   margin-right: 20px;
 `;
@@ -136,9 +138,36 @@ const TitleDiv = styled.div`
 const Title = styled.h4`
   margin-top: 0px;
   margin-right: 10px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
+  margin-bottom: 10px;
 `;
+
+const SeekingVenueDiv = styled.div`
+  height: auto;
+  width: 80%;
+  margin: 0px 20px;
+  color: white;
+  padding: 15px;
+  background-color: #0B0510;
+  border-radius: 15px;
+`;
+
+const SeekingVenueText = styled.div`
+  width: 100%;
+  margin: 0px 0px 5px 0px;
+`;
+const EmptyDiv = styled.div`
+  height: 150px;
+  width: 100%;
+`;
+const TitleText = styled.h4`
+  margin: 20px 20px 10px 20px;
+  font-weight: 400;
+  text-align: left;
+  font-family: 'Silkscreen', cursive;
+`;
+
 
 
 const Artist = () => {
@@ -186,9 +215,25 @@ const Artist = () => {
         <TitleDiv>
             <Title> Seeking Venue </Title>
             <Icon>
-              <BsToggleOn style={{ height: "22px", width: "22px", color: "green", textAlign: "left"}}/>
+              <BsToggleOn style={{ height: "22px", width: "24px", color: "green", textAlign: "left"}}/>
             </Icon>
-          </TitleDiv>
+        </TitleDiv>
+        <SeekingVenueDiv>
+          <IconTextDiv style={{margin: "5px 10px"}}>
+            <Icon>
+            <BsGeoFill style={{ height: "22px", width: "22px"}}/>
+            </Icon>
+            <Text> Enugu city </Text>
+          </IconTextDiv>
+          <SeekingVenueText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua.
+          </SeekingVenueText>
+        </SeekingVenueDiv>
+        <TitleText> 1 Upcoming show</TitleText>
+        <ShowCard/>
+        <TitleText> 0 Past show</TitleText>
+        <EmptyDiv/>
       <Footer/>
       </Wrapper>
     </Container>
