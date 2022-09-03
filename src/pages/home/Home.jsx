@@ -7,7 +7,6 @@ import LiveShow from "../../components/LiveShow";
 import ShowCard from "../../components/ShowCard";
 import { MdRadioButtonChecked } from "react-icons/md";
 
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
