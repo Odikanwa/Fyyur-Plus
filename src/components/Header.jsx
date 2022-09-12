@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdMoreVert } from "react-icons/md";
@@ -19,13 +19,13 @@ const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  font-family: 'Roboto', sans-serif;
-  background-color: #0B0510;
+  font-family: "Roboto", sans-serif;
+  background-color: #0b0510;
   color: white;
   align-items: center;
   justify-content: space-between;
   overflow-x: hidden;
-
+  border: none;
 `;
 
 const Menu = styled.div`
@@ -69,40 +69,39 @@ const LogoText = styled.h3`
   align-self: center;
   color: #ff0800;
   font-size: 16px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-weight: 900;
 `;
 
-const Avatar  = styled.div`
+const Avatar = styled.div`
   background-color: white;
   color: black;
   margin-right: 20px;
-  padding: 6px;
+  padding: 5px;
   border-radius: 50%;
   align-self: center;
 `;
 
-
 const Header = () => {
   return (
     <>
-    <GlobalStyle/>
-    <Container>
-      <Menu>
-        <MenuButton>
-          <MdMoreVert style={{ height: "30px", width: "30px"}}/>
-        </MenuButton>
-        <Logo>
-          <Img src={logo}/>
-          <LogoText> Fyyur </LogoText>
-        </Logo>
-      </Menu> 
-      <Avatar>
-        <BsFillPersonFill style={{ height: "30px", width: "30px"}}/>
-      </Avatar>
-    </Container>
+      <GlobalStyle />
+      <Container>
+        <Menu>
+          <MenuButton>
+            <MdMoreVert style={{ height: "30px", width: "30px" }} />
+          </MenuButton>
+          <Logo>
+            <Img src={logo} />
+            <LogoText> Fyyur </LogoText>
+          </Logo>
+        </Menu>
+        <Avatar>
+          <BsFillPersonFill style={{ height: "30px", width: "30px" }} />
+        </Avatar>
+      </Container>
     </>
-  )
-}
+  );
+};
 
 export default Header;

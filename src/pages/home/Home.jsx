@@ -13,26 +13,12 @@ const Container = styled.div`
   height: auto;
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const TrendingHeader = styled.div`
-  background-color: #0B0510;
-  height: 40px;
-  border-top: 1px solid gray;
-`;
-
-const TrendingHeaderText = styled.h4`
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  font-weight: 800;
-  align-self: center;
-  
-  margin: 9px 20px; 
 `;
 
 const TrendingCard = styled.div`
@@ -60,46 +46,37 @@ const LiveIcon = styled.div`
   margin-left: 0px;
   text-align: left;
   color: #ff0800;
-`
+`;
 
 const EmptyDiv = styled.div`
   height: 150px;
 `;
 
-
 const Home = () => {
   return (
     <Container>
-      <Header/>
+      <Header />
       <Wrapper>
-            <Title>
-              Trending ...
-            </Title>
-        <TrendingCard> 
-            <TrendingCarousel/>
+        <Title>Trending ...</Title>
+        <TrendingCard>
+          <TrendingCarousel />
         </TrendingCard>
         <TitleDiv>
-        <Title>
-          Live Show 
-        </Title>
-        <LiveIcon>
-          <MdRadioButtonChecked style={{ height: "15px", width: "15px"}}/>
-        </LiveIcon>
+          <Title>Live Shows</Title>
+          <LiveIcon>
+            <MdRadioButtonChecked style={{ height: "15px", width: "15px" }} />
+          </LiveIcon>
         </TitleDiv>
-        <LiveShow/>
-        <Title>
-          Today's Shows
-        </Title>
-        <TodayShowCarousel/>
-        <Title>
-          Upcoming Shows
-        </Title>
-        <ShowCard/>
-        <EmptyDiv/>
+        <LiveShow />
+        <Title>Today's Shows</Title>
+        <TodayShowCarousel />
+        <Title>Upcoming Shows</Title>
+        <ShowCard />
+        <EmptyDiv />
       </Wrapper>
-      <Footer/>
+      <Footer />
     </Container>
-  )
-}
+  );
+};
 
 export default Home;

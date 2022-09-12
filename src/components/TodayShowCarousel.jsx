@@ -73,7 +73,7 @@ const TodayShowCarousel = () => {
 
     className: "center",
     centerMode: true,
-    centerPadding: "40px",
+    centerPadding: "30px",
     swipeToSlide: true,
     dots: false,
     infinite: true,
