@@ -1,8 +1,14 @@
-import React from 'react';
-import "slick-carousel/slick/slick.css"; 
+import React from "react";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
-import { MdFavorite, MdOutlineAccessTime, MdLocationPin, MdSettingsVoice, MdKeyboardArrowRight } from "react-icons/md";
+import {
+  MdFavorite,
+  MdOutlineAccessTime,
+  MdLocationPin,
+  MdSettingsVoice,
+  MdKeyboardArrowRight,
+} from "react-icons/md";
 
 //  ******* CSS Styles ********
 
@@ -21,15 +27,15 @@ const Img = styled.img`
 `;
 
 const Heart = styled.div`
-  position: absolute; 
+  position: absolute;
   top: 10px;
-  right: 0; 
+  right: 0;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6); /* Black see-through */
-  color: #f1f1f1; 
+  color: #f1f1f1;
   height: 36px;
   width: 40px;
-  opacity:1;
+  opacity: 1;
   color: white;
   border-radius: 15px;
   text-align: center;
@@ -40,15 +46,15 @@ const Heart = styled.div`
 `;
 
 const Overlay = styled.div`
-  position: absolute; 
+  position: absolute;
   top: 157px;
-  bottom: 0px; 
+  bottom: 0px;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.6); /* Black see-through */
-  color: #f1f1f1; 
+  color: #f1f1f1;
   height: 130px;
   width: 87%;
-  opacity:1;
+  opacity: 1;
   color: white;
   border-radius: 20px;
   text-align: center;
@@ -59,7 +65,6 @@ const Overlay = styled.div`
 const Title = styled.h3`
   margin-top: 10px;
   margin-bottom: 10px;
-
 `;
 
 const ArtistWrapper = styled.div`
@@ -135,7 +140,7 @@ const BookNowBtn = styled.button`
   color: white;
   background-color: #ff0800;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
 `;
 const BtnText = styled.h4`
   width: 70%;
@@ -157,48 +162,47 @@ const BtnIcon = styled.div`
   color: white;
 `;
 
-
 // ******* JSX Logic *******
 
 const ShowCard = () => {
   const images = {
-    trending1: require("../img/john-doe.jpg")
+    trending1: require("../img/john-doe.jpg"),
     // trending2: require('../img/olamide-phyno.jpg'),
     // trending3: require('../img/peruzi.jpg')
-    }
+  };
   return (
     <Card>
-        <Img src={images.trending1}/>
-        <Heart>
-          <MdFavorite style={{ height: "35px", width: "35px"}}/>
-        </Heart>
-        <Overlay>
-          <Title> JD Experience 22 </Title>
-          <ArtistWrapper>
-            <ArtistIcon>
-              <MdSettingsVoice style={{ height: "18px", width: "18px"}}/>
-            </ArtistIcon>
-            <ArtistText> John Doe </ArtistText>
-          </ArtistWrapper>
-          <TimeWrapper>
-            <TimeIcon>
-              <MdOutlineAccessTime style={{ height: "18px", width: "18px"}}/>
-            </TimeIcon>
-            <TimeText> August 25 | 9pm </TimeText>
-            <VenueIcon>
-              <MdLocationPin style={{ height: "18px", width: "18px"}}/>
-            </VenueIcon>
-            <VenueText> Lagos </VenueText>
-          </TimeWrapper>
-          <BookNowBtn>
-            <BtnText> Book Now </BtnText> 
-            <BtnIcon>
-              <MdKeyboardArrowRight style={{ height: "18px", width: "18px"}}/>
-            </BtnIcon>
-          </BookNowBtn>
-        </Overlay>
+      <Img src={images.trending1} />
+      <Heart>
+        <MdFavorite style={{ height: "35px", width: "35px" }} />
+      </Heart>
+      <Overlay>
+        <Title> JD Experience 22 </Title>
+        <ArtistWrapper>
+          <ArtistIcon>
+            <MdSettingsVoice style={{ height: "18px", width: "18px" }} />
+          </ArtistIcon>
+          <ArtistText> John Doe </ArtistText>
+        </ArtistWrapper>
+        <TimeWrapper>
+          <TimeIcon>
+            <MdOutlineAccessTime style={{ height: "18px", width: "18px" }} />
+          </TimeIcon>
+          <TimeText> August 25 | 9pm </TimeText>
+          <VenueIcon>
+            <MdLocationPin style={{ height: "18px", width: "18px" }} />
+          </VenueIcon>
+          <VenueText> Lagos </VenueText>
+        </TimeWrapper>
+        <BookNowBtn>
+          <BtnText> Book Now </BtnText>
+          <BtnIcon>
+            <MdKeyboardArrowRight style={{ height: "18px", width: "18px" }} />
+          </BtnIcon>
+        </BookNowBtn>
+      </Overlay>
     </Card>
-  )
-}
+  );
+};
 
 export default ShowCard;

@@ -14,6 +14,7 @@ import ArtistSignUpForm from "./pages/forms/ArtistSignUpForm";
 import LessorSignUpForm from "./pages/forms/LessorSignUpForm";
 import UserSignUpForm from "./pages/forms/UserSignUpForm";
 import LoginForm from "./pages/forms/LoginForm";
+import SignUpForm from "./pages/forms/SignUpForm";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/forms/lessorsignupform/" element={<LessorSignUpForm />} />
         <Route path="/forms/usersignupform/" element={<UserSignUpForm />} />
         <Route path="/forms/loginform/" element={<LoginForm />} />
+        <Route path="/forms/signupform/" element={<SignUpForm />} />
       </Routes>
     </Router>
   );

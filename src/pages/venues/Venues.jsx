@@ -2,9 +2,7 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { BsSliders, BsLampFill } from "react-icons/bs";
-import { MdVerifiedUser, MdPeopleAlt, MdSpeakerGroup} from "react-icons/md";
-
-
+import { MdVerifiedUser, MdPeopleAlt, MdSpeakerGroup } from "react-icons/md";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +11,8 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-x: hidden;
   /* background-color: #F8EEEC; */
-  background-color: #F0EDE5;
+  /* background-color: #F0EDE5; */
+  background-color: white;
 `;
 
 const CaptionDiv = styled.div`
@@ -28,13 +27,13 @@ const CaptionDiv = styled.div`
   padding: 0px 0px 0px 20px;
   align-items: center;
   justify-content: space-between;
-  background-color: #0B0510;
+  background-color: #0b0510;
   color: white;
 `;
 
 const Caption = styled.h3`
   font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   width: 60%;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -54,7 +53,7 @@ const CaptionImg = styled.img`
 
 const ButtonsDiv = styled.div`
   width: 100%;
-  height: auto; 
+  height: auto;
   display: flex;
   flex-direction: row;
   margin: 0px 0px;
@@ -64,8 +63,13 @@ const Button = styled.button`
   font-weight: bold;
   padding: 7px 10px;
   border-radius: 10px;
-  background-color: silver;
+  background-color: white;
   border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const FilterButton = styled.button`
@@ -74,11 +78,15 @@ const FilterButton = styled.button`
   font-weight: bold;
   padding: 7px 10px;
   border-radius: 10px;
-  background-color: silver;
-  /* background-color: white; */
+  background-color: white;
   border: none;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const FilterText = styled.p`
@@ -99,12 +107,14 @@ const Card = styled.div`
   background-color: white;
   margin-top: 10px;
   margin-bottom: 0px;
-/* box-shadow: -3px 3px 3px 3px rgba(0,0,0,0.75);
+  /* box-shadow: -3px 3px 3px 3px rgba(0,0,0,0.75);
 -webkit-box-shadow: -3px 3px 3px 3px rgba(0,0,0,0.75);
 -moz-box-shadow: -3px 3px 3px 3px rgba(0,0,0,0.75); */
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
--webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
--moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const Img = styled.img`
@@ -155,54 +165,61 @@ const CapacityDiv = styled.div`
 const Venues = () => {
   const images = {
     captionImg: require("../../img/stage3.jpg"),
-    cardImg: require("../../img/eko.jpg")
-    }
+    cardImg: require("../../img/eko.jpg"),
+  };
   return (
     <Container>
-      <Header/>
+      <Header />
       <CaptionDiv>
         <Caption> Find Your Dream Venue </Caption>
-        <CaptionImg src={images.captionImg}/>
+        <CaptionImg src={images.captionImg} />
       </CaptionDiv>
       <ButtonsDiv>
-        <Button style={{backgroundColor: "#ff0800", color: "white"}}> All </Button>
+        <Button style={{ backgroundColor: "#ff0800", color: "white" }}>
+          {" "}
+          All{" "}
+        </Button>
         <Button> Hall | Theatre </Button>
         <Button> Open Air </Button>
         <FilterButton>
           <FilterText> Filter </FilterText>
-          <BsSliders style={{ height: "18px", width: "18px", paddingLeft: "5px"}}/>
+          <BsSliders
+            style={{ height: "18px", width: "18px", paddingLeft: "5px" }}
+          />
         </FilterButton>
       </ButtonsDiv>
       <Title> Venues </Title>
       <Card>
-        <Img src={images.cardImg}/>
+        <Img src={images.cardImg} />
         <ImgTextDiv>
           <IconTextDiv>
-            <MdVerifiedUser style={{ height: "18px", width: "18px", color: "brown"}}/>
+            <MdVerifiedUser
+              style={{ height: "18px", width: "18px", color: "brown" }}
+            />
             <VenueType> Premium | Hall</VenueType>
           </IconTextDiv>
           <VenuePrice> 100, 000 NGN / Hour </VenuePrice>
           <VenueText> Eko Convention Center, Eko Hotel, Lagos</VenueText>
-          <CapacityDiv> 
+          <CapacityDiv>
             <IconTextDiv>
-              <MdPeopleAlt style={{ height: "18px", width: "18px"}}/>
+              <MdPeopleAlt style={{ height: "18px", width: "18px" }} />
               <VenueText> 10,000 </VenueText>
             </IconTextDiv>
             <IconTextDiv>
-              <MdSpeakerGroup style={{ height: "18px", width: "18px"}}/>
+              <MdSpeakerGroup style={{ height: "18px", width: "18px" }} />
               <VenueText> Installed </VenueText>
             </IconTextDiv>
             <IconTextDiv>
-              <BsLampFill style={{ height: "18px", width: "18px"}}/>
+              <BsLampFill style={{ height: "18px", width: "18px" }} />
               <VenueText> Installed </VenueText>
             </IconTextDiv>
           </CapacityDiv>
         </ImgTextDiv>
       </Card>
       {/* <EmptyDiv/> */}
-      <Footer/>
+      <Footer />
     </Container>
-  )
-}
+  );
+};
 
 export default Venues;

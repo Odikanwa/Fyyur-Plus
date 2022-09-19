@@ -73,6 +73,7 @@ const Caption = styled.h2`
   font-weight: bold;
   color: white;
   text-align: center;
+  margin-top: 0px;
 `;
 
 const Input = styled.input`
@@ -116,8 +117,8 @@ const LoginForm = () => {
     <Container>
       <Header />
       <FormDiv>
-        <Caption>Welcome!</Caption>
-        <Input placeholder="  Username" />
+        <Caption>Welcome Back!</Caption>
+        <Input placeholder="  Email" />
         <Input placeholder="  Password" />
         <SignIn>Sign In</SignIn>
         <TextFlex>

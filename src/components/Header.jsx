@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { BsFillPersonFill } from "react-icons/bs";
-import { MdMoreVert } from "react-icons/md";
 import logo from "../img/logo.png";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 import { createGlobalStyle } from "styled-components";
 
@@ -15,34 +15,33 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   top: 0;
-  height: 7vh;
+  height: 11vh;
   width: 100vw;
-  display: flex;
-  flex-direction: row;
+  margin: 0px;
   font-family: "Roboto", sans-serif;
   background-color: #0b0510;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Wrapper = styled.div`
+  top: 0;
+  height: 11vh;
+  width: 100vw;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
   color: white;
   align-items: center;
   justify-content: space-between;
   overflow-x: hidden;
   border: none;
 `;
-
 const Menu = styled.div`
   width: 40%;
   height: 100%;
   display: flex;
   flex-direction: row;
-`;
-const MenuButton = styled.button`
-  background-color: transparent;
-  color: white;
-  width: 20%;
-  height: 50%;
-  align-self: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  border: none;
 `;
 
 const Logo = styled.div`
@@ -58,7 +57,7 @@ const Logo = styled.div`
 const Img = styled.img`
   height: 30px;
   width: 30px;
-  margin-right: 3px;
+  margin-left: 20px;
   align-self: center;
   text-align: center;
   vertical-align: center;
@@ -73,6 +72,7 @@ const LogoText = styled.h3`
   font-weight: 900;
 `;
 
+//Display set to 'none'. To be made visible when user is signed in
 const Avatar = styled.div`
   background-color: white;
   color: black;
@@ -80,25 +80,84 @@ const Avatar = styled.div`
   padding: 5px;
   border-radius: 50%;
   align-self: center;
+  display: none;
 `;
 
-const Header = () => {
+const LinksRibbon = styled.div`
+  height: 9vh;
+  width: 100vw;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border: 1px solid silver;
+`;
+
+const Button = styled.button`
+  height: auto;
+  width: auto;
+  margin: 0px 0px 0px 20px;
+  padding: 5px 15px;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
+// const ActiveButton = styled(Button)`
+//   background-color: #ff0800;
+//   color: white;
+// `;
+
+const Header = ({ to, children, ...props }) => {
+  const btnRef = useRef();
+  // const resolvedPath = useResolvedPath(to);
+  // console.log(resolvedPath);
+  // const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  // console.log(isActive);
+  // // const Btn = <Button />;
+  // // const activeBtn = <ActiveButton />;
+  // const btnRef = useRef();
+
+  // if (isActive === true) {
+  //   // <Button style={{ backgroundColor: "red", color: "white" }} />;
+  //   btnRef.current.backgroundColor = "red";
+  // }
   return (
     <>
       <GlobalStyle />
       <Container>
-        <Menu>
-          <MenuButton>
-            <MdMoreVert style={{ height: "30px", width: "30px" }} />
-          </MenuButton>
-          <Logo>
-            <Img src={logo} />
-            <LogoText> Fyyur </LogoText>
-          </Logo>
-        </Menu>
-        <Avatar>
-          <BsFillPersonFill style={{ height: "30px", width: "30px" }} />
-        </Avatar>
+        <Wrapper>
+          <Menu>
+            <Logo>
+              <Link to="/">
+                <Img src={logo} />
+              </Link>
+              <LogoText>
+                <Link to="/">Fyyur</Link>
+              </LogoText>
+            </Logo>
+          </Menu>
+          <Avatar>
+            <BsFillPersonFill style={{ height: "30px", width: "30px" }} />
+          </Avatar>
+        </Wrapper>
+        <LinksRibbon>
+          <Button ref={btnRef}>
+            <Link to="/">Shows</Link>
+          </Button>
+          <Button>
+            <Link to="../artists/">Artists</Link>
+          </Button>
+          <Button>
+            <Link to="../venues">Venues</Link>
+          </Button>
+        </LinksRibbon>
       </Container>
     </>
   );

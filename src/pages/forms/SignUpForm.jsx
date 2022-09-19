@@ -3,6 +3,39 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+// const Shape = css`
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+// `;
+
+// const IntoShapeTop = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 1;
+//   clip-path: polygon(
+//     0 0,
+//     100% 0,
+//     100% 100%,
+//     97% 8%,
+//     52% 9%,
+//     28% 10%,
+//     11% 10%,
+//     0 17%
+//   );
+//   background-color: #0b0510;
+//   z-index: 10;
+//   /* @media only screen and (max-width: 480px){
+//       clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+//   } */
+// `;
+
 const Container = styled.div`
   height: 100vh;
   max-width: 100vw;
@@ -13,18 +46,23 @@ const Container = styled.div`
   background-color: #0b0510;
   font-family: "Roboto", sans-serif;
   border: none;
-  justify-content: center;
-  align-items: center;
 `;
 
 const FormDiv = styled.div`
   height: 100vh;
   width: 100vw;
   margin: 0px;
+  /* margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  border-radius: 40px; */
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 20;
+  /* background-color: #f0ede5; */
   align-self: center;
   position: relative;
   justify-content: center;
@@ -35,6 +73,7 @@ const Caption = styled.h2`
   font-weight: bold;
   color: white;
   text-align: center;
+  margin-top: 0px;
   margin-bottom: 10px;
 `;
 
@@ -49,7 +88,7 @@ const Input = styled.input`
   border-radius: 40px;
 `;
 
-const SubmitBtn = styled.button`
+const SignIn = styled.button`
   height: auto;
   width: 40%;
   padding: 15px;
@@ -67,50 +106,21 @@ const Text = styled.p`
   color: white;
 `;
 
-const Label = styled.label`
-  margin: 0px;
-  width: 80%;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-`;
-
-const File = styled.input`
-  color: white;
-  height: 30px;
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 18px;
-  border-radius: 40px;
-  border: none;
-  border-radius: 40px;
-`;
-const EmptyDiv = styled.div`
-  height: 150px;
-  width: 100%;
-`;
-
-const UserSignUpForm = () => {
+const SignUpForm = () => {
   return (
     <Container>
       <Header />
       <FormDiv>
-        <Caption>Hi there!</Caption>
-        <Text>Please fill in the form below.</Text>
-        <Input placeholder="  First Name" />
-        <Input placeholder="  Last Name" />
+        <Caption>Hello!</Caption>
+        <Text>Sign up to get started.</Text>
+        <Input placeholder="  Name" />
         <Input placeholder="  Email" />
-        <Input placeholder="  State" />
-        <Input placeholder="  Country" />
-        <Label>Upload Profile Picture</Label>
-        <File type="file" name="filename" />
-        <SubmitBtn>Submit</SubmitBtn>
-        <EmptyDiv />
+        <Input placeholder="  Password" />
+        <SignIn>Sign Up</SignIn>
       </FormDiv>
       <Footer />
     </Container>
   );
 };
 
-export default UserSignUpForm;
+export default SignUpForm;

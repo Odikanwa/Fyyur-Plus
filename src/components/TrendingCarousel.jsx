@@ -1,5 +1,5 @@
-import React from 'react';
-import "slick-carousel/slick/slick.css"; 
+import React from "react";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
@@ -7,9 +7,9 @@ import styled from "styled-components";
 const Card = styled.div`
   display: flex;
   flex-direction: row;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
-  background-color: #0B0510;
+  background-color: #0b0510;
 `;
 
 const Img = styled.img`
@@ -28,7 +28,6 @@ const Desc = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 `;
 
 const DescTitle = styled.h3`
@@ -68,16 +67,12 @@ function SamplePrevArrow(props) {
   );
 }
 
-
-
 const TrendingCarousel = () => {
-    
   const images = {
     trending1: require("../img/john-doe.jpg"),
     trending2: require("../img/olamide-phyno.jpg"),
-    trending3: require("../img/peruzi.jpg")
-    
-  }
+    trending3: require("../img/peruzi.jpg"),
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -90,43 +85,43 @@ const TrendingCarousel = () => {
     autoplaySpeed: 8000,
     // cssEase: "linear",
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
   };
-   
-    return (
-      <div>
-        <Slider {...settings}>
-          <div>
-            <Card>
-                <Img src={images.trending1}/>
-                <Desc>
-                  <DescTitle>JD Experience 22</DescTitle>
-                  <DescArtist>John Doe | Aug 25</DescArtist>
-                </Desc>
-            </Card>
-          </div>
-          <div>
+
+  return (
+    <div>
+      <Slider {...settings}>
+        <div>
           <Card>
-                <Img src={images.trending2}/>
-                <Desc>
-                  <DescTitle>Wild, Wild Night</DescTitle>
-                  <DescArtist>Olameda et Phyna | Aug 27</DescArtist>
-                </Desc>
-            </Card>
-          </div>
-          <div>
+            <Img src={images.trending1} />
+            <Desc>
+              <DescTitle>JD Experience 22</DescTitle>
+              <DescArtist>John Doe | Aug 25</DescArtist>
+            </Desc>
+          </Card>
+        </div>
+        <div>
           <Card>
-                <Img src={images.trending3}/>
-                <Desc>
-                  <DescTitle>Chill with Peruza</DescTitle>
-                  <DescArtist>Peruza | Aug 30</DescArtist>
-                </Desc>
-            </Card>
-          </div>
-        </Slider>
-      </div>
-    );
-}
+            <Img src={images.trending2} />
+            <Desc>
+              <DescTitle>Wild, Wild Night</DescTitle>
+              <DescArtist>Olameda et Phyna | Aug 27</DescArtist>
+            </Desc>
+          </Card>
+        </div>
+        <div>
+          <Card>
+            <Img src={images.trending3} />
+            <Desc>
+              <DescTitle>Chill with Peruza</DescTitle>
+              <DescArtist>Peruza | Aug 30</DescArtist>
+            </Desc>
+          </Card>
+        </div>
+      </Slider>
+    </div>
+  );
+};
 export default TrendingCarousel;
 
 // const Carousel = () => {

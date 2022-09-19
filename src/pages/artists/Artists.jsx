@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import FavoriteArtistCarousel from '../../components/FavoriteArtistCarousel';
-import ArtistCard from '../../components/ArtistCard';
+import FavoriteArtistCarousel from "../../components/FavoriteArtistCarousel";
+import ArtistCard from "../../components/ArtistCard";
 
 const Container = styled.div`
   display: flex;
@@ -11,26 +11,25 @@ const Container = styled.div`
   height: auto;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 `;
 
 const Title = styled.h3`
   margin-left: 20px;
   margin-bottom: 0px;
-`
-
+`;
 
 const Artists = () => {
   return (
     <Container>
-      <Header/>
+      <Header />
       <Title> Favorite Artists </Title>
-        <FavoriteArtistCarousel/>
+      <FavoriteArtistCarousel />
       <Title> Artists List </Title>
-      <ArtistCard/>
-      <Footer/>
+      <ArtistCard />
+      <Footer />
     </Container>
-  )
-}
+  );
+};
 
 export default Artists;
