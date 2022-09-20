@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BsFillPersonFill } from "react-icons/bs";
 import logo from "../img/logo.png";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { createGlobalStyle } from "styled-components";
 
@@ -83,7 +83,7 @@ const Avatar = styled.div`
   display: none;
 `;
 
-const LinksRibbon = styled.div`
+export const LinksRibbon = styled.div`
   height: 9vh;
   width: 100vw;
   margin: 0px;
@@ -91,14 +91,14 @@ const LinksRibbon = styled.div`
   flex-direction: row;
   align-items: center;
   background-color: white;
-  border: 1px solid silver;
+  border-bottom: 1px solid silver;
 `;
 
 const Button = styled.button`
   height: auto;
   width: auto;
   margin: 0px 0px 0px 20px;
-  padding: 5px 15px;
+  padding: 0;
   border: none;
   background-color: white;
   border-radius: 20px;
@@ -109,25 +109,31 @@ const Button = styled.button`
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
-// const ActiveButton = styled(Button)`
-//   background-color: #ff0800;
-//   color: white;
-// `;
+const MenuLink = styled(NavLink)`
+  height: auto;
+  width: auto;
+  padding: 5px 15px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  &.active {
+    text-decoration: 3px underline;
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 420px) {
+    color: black;
+    &:hover,
+    &.active {
+      text-decoration: none;
+      background-color: #ff0800;
+      color: white;
+      font-weight: bold;
+    }
+  }
+`;
 
-const Header = ({ to, children, ...props }) => {
-  const btnRef = useRef();
-  // const resolvedPath = useResolvedPath(to);
-  // console.log(resolvedPath);
-  // const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-  // console.log(isActive);
-  // // const Btn = <Button />;
-  // // const activeBtn = <ActiveButton />;
-  // const btnRef = useRef();
-
-  // if (isActive === true) {
-  //   // <Button style={{ backgroundColor: "red", color: "white" }} />;
-  //   btnRef.current.backgroundColor = "red";
-  // }
+const Header = () => {
   return (
     <>
       <GlobalStyle />
@@ -135,12 +141,8 @@ const Header = ({ to, children, ...props }) => {
         <Wrapper>
           <Menu>
             <Logo>
-              <Link to="/">
-                <Img src={logo} />
-              </Link>
-              <LogoText>
-                <Link to="/">Fyyur</Link>
-              </LogoText>
+              <Img src={logo} />
+              <LogoText>Fyyur</LogoText>
             </Logo>
           </Menu>
           <Avatar>
@@ -148,14 +150,14 @@ const Header = ({ to, children, ...props }) => {
           </Avatar>
         </Wrapper>
         <LinksRibbon>
-          <Button ref={btnRef}>
-            <Link to="/">Shows</Link>
+          <Button>
+            <MenuLink to="/">Shows</MenuLink>
           </Button>
           <Button>
-            <Link to="../artists/">Artists</Link>
+            <MenuLink to="../artists/">Artists</MenuLink>
           </Button>
           <Button>
-            <Link to="../venues">Venues</Link>
+            <MenuLink to="../venues">Venues</MenuLink>
           </Button>
         </LinksRibbon>
       </Container>
