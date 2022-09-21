@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsFillPersonFill } from "react-icons/bs";
 import logo from "../img/logo.png";
 import { NavLink } from "react-router-dom";
+import { MdMoreVert } from "react-icons/md";
 
 import { createGlobalStyle } from "styled-components";
 
@@ -54,10 +55,18 @@ const Logo = styled.div`
   align-self: center;
 `;
 
+const Kebab = styled.div`
+  background-color: transparent;
+  color: white;
+  margin-left: 20px;
+  margin-right: 0px;
+  align-self: center;
+`;
+
 const Img = styled.img`
   height: 30px;
   width: 30px;
-  margin-left: 20px;
+  margin-left: 10px;
   align-self: center;
   text-align: center;
   vertical-align: center;
@@ -133,6 +142,24 @@ const MenuLink = styled(NavLink)`
   }
 `;
 
+const CenterMenu = styled.div`
+  height: 40vh;
+  width: 70vw;
+  margin: 30vh 15vw;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0510;
+  color: white;
+  position: fixed;
+  border-radius: 20px;
+  z-index: 1;
+`;
+
+const Text = styled.p``;
+
 const Header = () => {
   return (
     <>
@@ -140,6 +167,9 @@ const Header = () => {
       <Container>
         <Wrapper>
           <Menu>
+            <Kebab>
+              <MdMoreVert style={{ height: "30px", width: "30px" }} />
+            </Kebab>
             <Logo>
               <Img src={logo} />
               <LogoText>Fyyur</LogoText>
@@ -160,6 +190,12 @@ const Header = () => {
             <MenuLink to="../venues">Venues</MenuLink>
           </Button>
         </LinksRibbon>
+        <CenterMenu>
+          <Text>Login</Text>
+          <Text>Post Show</Text>
+          <Text>Post Venue</Text>
+          <Text>Get the App</Text>
+        </CenterMenu>
       </Container>
     </>
   );

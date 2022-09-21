@@ -183,7 +183,6 @@ const EmptyDiv = styled.div`
   height: 150px;
   width: 100%;
 `;
-
 /*
 NOTE: The wrapper sections are controlled with "display: none". Kindly set in js.
  */
