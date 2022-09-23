@@ -4,7 +4,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import logo from "../img/logo.png";
 import appleBadge from "../img/download_on_applestore.svg";
 import googleBadge from "../img/download_on_playstore.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { MdMoreVert } from "react-icons/md";
 
 import { createGlobalStyle } from "styled-components";
@@ -29,7 +29,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   top: 0;
-  height: 11vh;
+  height: 7vh;
   width: 100vw;
   margin: 0px;
   display: flex;
@@ -45,6 +45,7 @@ const Menu = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
+  margin-left: 0px;
 `;
 
 const Logo = styled.div`
@@ -95,7 +96,7 @@ const Avatar = styled.div`
 `;
 
 const LinksRibbon = styled.div`
-  height: 9vh;
+  height: 7vh;
   width: 100vw;
   margin: 0px;
   display: flex;
@@ -219,7 +220,10 @@ const Overlay = styled.div`
 const Header = () => {
   const centerMenuRef = useRef();
   const overlayRef = useRef();
+  const linksRibbonRef = useRef();
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
   const toggleCenterMenu = () => {
     setMenuOpen(!menuOpen);
 
@@ -233,6 +237,16 @@ const Header = () => {
       overlayRef.current.style.display = "none";
     }
   };
+
+  useEffect(() => {
+    if (
+      location.pathname !== "/" &&
+      location.pathname !== "/artists/" &&
+      location.pathname !== "/venues/"
+    ) {
+      linksRibbonRef.current.style.display = "none";
+    }
+  }, [location.pathname]);
 
   //Custom hook for closing mobile nav dropdown menu on click ouside the menu
   const useOnClickOutside = (centerMenuRef, handler) => {
@@ -286,7 +300,7 @@ const Header = () => {
             <BsFillPersonFill style={{ height: "30px", width: "30px" }} />
           </Avatar>
         </Wrapper>
-        <LinksRibbon>
+        <LinksRibbon ref={linksRibbonRef}>
           <Button>
             <MenuLink to="/">Shows</MenuLink>
           </Button>
